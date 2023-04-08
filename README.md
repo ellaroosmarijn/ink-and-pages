@@ -31,7 +31,7 @@ This repo is designed to provide space to code a fullstack app. It contains node
 
 ### 1. Choosing your data set
 
-- [ ] First, decide what you would like to keep a collection of. This could be a repo for keeping track of movies, books, gifs, cars, rocks, anything you fancy, but keep it simple!
+- [x] First, decide what you would like to keep a collection of. This could be a repo for keeping track of movies, books, gifs, cars, rocks, anything you fancy, but keep it simple!
   <details style="padding-left: 2em">
     <summary>More about your collection</summary>
 
@@ -48,19 +48,19 @@ Our first job is getting something showing on the front end from our database. H
 
 ### 2. Building the database
 
-- [ ] Design a database to store a list of your things (e.g. books)
-- [ ] Build the migrations and seed data
+- [x] Design a database to store a list of your things (e.g. books)
+- [x] Build the migrations and seed data
 
 ### 3. Building the API
-- [ ] Build an API (back end route) to get the information from your database
-- [ ] Test your API with Insomnia
+- [x] Build an API (back end route) to get the information from your database
+- [x] Test your API with Insomnia
 
 ## Front end
 
 ### 4. Setting the stage
 
-- [ ] Build a React component with static html
-- [ ] Build Redux reducer. Start with a hardcoded initial state
+- [x] Build a React component with static html
+- [x] Build Redux reducer. Start with a hardcoded initial state
   <details style="padding-left: 2em">
     <summary>Tip</summary>
     
@@ -70,22 +70,22 @@ Our first job is getting something showing on the front end from our database. H
     ```
   </details>
 
-- [ ] Use `useAppSelector` to display the redux state you hardcoded in the React Component
+- [x] Use `useAppSelector` to display the redux state you hardcoded in the React Component
 
 ### 5. Building the API client
-- [ ] Build an API client in the front end to request the information from your routes
+- [x] Build an API client in the front end to request the information from your routes
 
 ### 6. Building thunky actions
-- [ ] Build Thunk actions to use the API and get the information
-- [ ] Build Redux actions to save task data from the thunk
-- [ ] Use `useAppDispatch` and `useEffect` to dispatch the thunk when your app loads
+- [x] Build Thunk actions to use the API and get the information
+- [x] Build Redux actions to save task data from the thunk
+- [x] Use `useAppDispatch` and `useEffect` to dispatch the thunk when your app loads
 
 ## Additional functionality
 
 ### 7. Adding, deleting, and updating records
-- [ ] Include the ability to add a new record (will need a form in your components)
-- [ ] Include the ability to remove/delete records
-- [ ] Include the ability to update records (e.g. for correcting typos)
+- [x] Include the ability to add a new record (will need a form in your components)
+- [x] Include the ability to remove/delete records
+- [x] Include the ability to update records (e.g. for correcting typos)
 
 ---
 ## Stretch
