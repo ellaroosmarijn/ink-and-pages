@@ -21,3 +21,11 @@ export function deleteBook(id: number, db = connection) {
 export function updateBook(id: number, book: Book, db = connection) {
   return db('books').update(book).where({ id })
 }
+
+export function getBookByStatus(status: string, db = connection) {
+  return db('books').where({ status })
+}
+
+export function getBookByRating(rating: number, db = connection) {
+  return db('books').where({ rating })
+}
