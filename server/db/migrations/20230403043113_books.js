@@ -8,6 +8,10 @@ exports.up = function (knex) {
     table.string('title')
     table.string('author')
     table.string('genre')
+    table.string('status')
+    table.integer('rating')
+    table.string('description')
+    table.integer('completed')
   })
 }
 
