@@ -1,16 +1,11 @@
 import Books from './Books'
+import Header from './Header'
 
-function App() {
+export default function App() {
   return (
     <>
-      <header className="header">
-        <h1>A Collection of Books</h1>
-      </header>
-      <section className="main">
-        <Books />
-      </section>
+      <Header />
+      <Books />
     </>
   )
 }
-
-export default App
