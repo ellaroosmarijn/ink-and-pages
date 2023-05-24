@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-import { Book } from '../../models/books'
+import { Book } from '../../shared/types'
 
 interface BookDataInputProps {
   onSubmit: (data: Book) => void

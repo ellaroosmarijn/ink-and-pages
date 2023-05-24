@@ -1,6 +1,6 @@
 import type { ThunkAction } from '../store'
 
-import { Books, Book } from '../../models/books'
+import { Books, Book } from '../../shared/types'
 import { allBooks, newBook, deleteBook, updateBook } from '../apis/apiClient'
 
 export const GET_BOOKS_PENDING = 'GET_BOOKS_PENDING'

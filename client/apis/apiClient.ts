@@ -1,6 +1,6 @@
 import request from 'superagent'
 
-import { Books, Book } from '../../models/books'
+import { Books, Book } from '../../shared/types'
 
 export async function allBooks(): Promise<Books> {
   try {

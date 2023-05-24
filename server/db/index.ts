@@ -1,6 +1,6 @@
 import connection from './connection'
 
-import { Book } from '../../models/books'
+import { Book } from '../../shared/types'
 
 export function getAllBooks(db = connection) {
   return db('books')

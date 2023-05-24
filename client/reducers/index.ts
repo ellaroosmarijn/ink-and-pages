@@ -1,4 +1,4 @@
-import { Books } from '../../models/books'
+import { Books } from '../../shared/types'
 
 import {
   BooksAction,
