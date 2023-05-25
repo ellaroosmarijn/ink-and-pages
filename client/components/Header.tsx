@@ -2,7 +2,6 @@ import styled from '@emotion/styled'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 import { BREAKPOINTS } from '../../shared/constants'
-import Books from './Library'
 
 const HeaderWrapper = styled.div`
   width: 100%;
@@ -78,7 +77,6 @@ export default function Header() {
             Rating
           </StyledAnchorLink>
         </HeadingLinks>
-        <Books />
       </HeaderWrapper>
     </>
   )
