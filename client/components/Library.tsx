@@ -12,6 +12,7 @@ import { Book } from '../../shared/types'
 import BookDataInput from './BookDataInput'
 
 const SubHeading = styled.div`
+  padding-top: 1.5rem;
   font-weight: 700;
   font-size: 1.5rem;
 `
@@ -58,6 +59,7 @@ export default function Library() {
   const [updateBook, setUpdateBook] = useState<Book | undefined>()
 
   function handleUpdate(book: Book) {
+    // if book undefined or id not found then return because can't update.
     if (updateBook?.id == null) {
       return
     }
@@ -65,7 +67,7 @@ export default function Library() {
       .then(() => {
         setUpdateBook(undefined)
       })
-      .catch(() => {})
+      .catch(() => {}) // TODO: handle error gracefully
   }
 
   function remove(id: string) {

@@ -51,6 +51,7 @@ export function updateBookSuccess(updatedBook: Book): BooksAction {
   }
 }
 
+// TODO: use async and try/catch in ThunkActions
 export function getBooks(): ThunkAction {
   return (dispatch) => {
     dispatch(getBooksPending())
@@ -98,7 +99,7 @@ export function updatingBook(id: number, book: Book): ThunkAction {
     return updateBook(id, book)
       .then((updatedBook) => {
         dispatch(updateBookSuccess(updatedBook))
-        dispatch(getBooks())
+        dispatch(getBooks()) // TODO: remove this and just use updateBookSuccess to update the book list
       })
       .catch((error: Error) => {
         dispatch(booksRequestRejected(error.message))

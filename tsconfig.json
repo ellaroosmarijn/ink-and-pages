@@ -1,6 +1,6 @@
 {
   "ts-node": {"transpileOnly": true},
-  "include": ["server/**/*", "client/**/*"],
+  "include": ["server/**/*", "client/**/*", "postcss.config.js", "tailwind.config.js"],
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig to read more about this file */
     /* Projects */

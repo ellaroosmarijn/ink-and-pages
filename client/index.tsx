@@ -4,6 +4,8 @@ import store from './store'
 
 import App from './components/App'
 
+import './index.css'
+
 document.addEventListener('DOMContentLoaded', () => {
   createRoot(document.getElementById('app') as HTMLElement).render(
     <Provider store={store}>

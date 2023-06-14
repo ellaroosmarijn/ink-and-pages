@@ -4,5 +4,6 @@ export interface Book {
   author?: string
   genre?: string
 }
+//TODO: add new members
 
 export type Books = Book[]

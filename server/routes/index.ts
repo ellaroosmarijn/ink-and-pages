@@ -8,7 +8,7 @@ router.get('/books', async (req, res) => {
   try {
     const books = await getAllBooks()
     res.json(books)
-  } catch (e) {
+  } catch (error) {
     res.sendStatus(500).json({ error: 'Please try again' })
   }
 })
@@ -17,7 +17,7 @@ router.post('/book/add', async (req, res) => {
   try {
     const book = req.body
     await newBook(book)
-    res.end()
+    res.end() // TODO: send new book back to client
   } catch (error) {
     res.sendStatus(500).json({ error: 'Please try again' })
   }

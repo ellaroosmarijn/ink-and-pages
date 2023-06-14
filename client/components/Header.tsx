@@ -59,25 +59,23 @@ export const StyledAnchorLink = styled(AnchorLink)`
 
 export default function Header() {
   return (
-    <>
-      <HeaderWrapper>
-        <Heading>Ink & Pages</Heading>
-        <Divider />
-        <HeadingLinks>
-          <StyledAnchorLink href="#library" data-hover="library">
-            Library
-          </StyledAnchorLink>
-          <StyledAnchorLink href="#read" data-hover="read">
-            Read
-          </StyledAnchorLink>
-          <StyledAnchorLink href="#reading" data-hover="reading">
-            Reading
-          </StyledAnchorLink>
-          <StyledAnchorLink href="#rating" data-hover="rating">
-            Rating
-          </StyledAnchorLink>
-        </HeadingLinks>
-      </HeaderWrapper>
-    </>
+    <HeaderWrapper>
+      <Heading>Ink & Pages</Heading>
+      <Divider />
+      <HeadingLinks>
+        <StyledAnchorLink href="#library" data-hover="library">
+          Library
+        </StyledAnchorLink>
+        <StyledAnchorLink href="#read" data-hover="read">
+          Read
+        </StyledAnchorLink>
+        <StyledAnchorLink href="#reading" data-hover="reading">
+          Reading
+        </StyledAnchorLink>
+        <StyledAnchorLink href="#unread" data-hover="unread">
+          Unread
+        </StyledAnchorLink>
+      </HeadingLinks>
+    </HeaderWrapper>
   )
 }
