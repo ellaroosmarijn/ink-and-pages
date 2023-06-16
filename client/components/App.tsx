@@ -1,14 +1,17 @@
-import Library from './Library'
+import { Routes, Route } from 'react-router-dom'
+
 import Header from './Header'
+import Library from './Library'
+import Wishlist from './Wishlist'
 
 export default function App() {
   return (
-    // <div className="h-full w-full bg-orange-50">
-    //   <div className="bg-red-600">HELLO</div>
     <>
       <Header />
-      <Library />
+      <Routes>
+        <Route path="/" element={<Library />} />
+        <Route path="/play" element={<Wishlist />} />
+      </Routes>
     </>
-    // </div>
   )
 }

@@ -5,11 +5,14 @@ import store from './store'
 import App from './components/App'
 
 import './index.css'
+import { BrowserRouter } from 'react-router-dom'
 
 document.addEventListener('DOMContentLoaded', () => {
   createRoot(document.getElementById('app') as HTMLElement).render(
     <Provider store={store}>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Provider>
   )
 })

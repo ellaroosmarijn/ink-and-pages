@@ -1,4 +1,7 @@
 import styled from '@emotion/styled'
+import { Link } from 'react-router-dom'
+
+// import { BREAKPOINTS } from '../../shared/constants'
 
 const HeaderWrapper = styled.div`
   width: 100%;
@@ -41,12 +44,19 @@ const HeadingLinks = styled.div`
   }
 `
 
+// @media (max-width: ${BREAKPOINTS.md}) {
+//   font-weight: 700;
+// }
+
 export default function Header() {
   return (
     <HeaderWrapper>
       <Heading>Ink & Pages</Heading>
       <Divider />
-      <HeadingLinks>Library</HeadingLinks>
+      <HeadingLinks>
+        <Link to="/library">Library</Link>
+        <Link to="/wishlist">Wishlist</Link>
+      </HeadingLinks>
     </HeaderWrapper>
   )
 }
