@@ -1,7 +1,4 @@
 import styled from '@emotion/styled'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
-
-import { BREAKPOINTS } from '../../shared/constants'
 
 const HeaderWrapper = styled.div`
   width: 100%;
@@ -43,39 +40,13 @@ const HeadingLinks = styled.div`
     display: inline-block;
   }
 `
-export const StyledAnchorLink = styled(AnchorLink)`
-  color: inherit;
-  font-weight: 400;
-  text-decoration: none;
-
-  &:hover {
-    color: #8f6917;
-  }
-
-  @media (max-width: ${BREAKPOINTS.md}) {
-    font-weight: 700;
-  }
-`
 
 export default function Header() {
   return (
     <HeaderWrapper>
       <Heading>Ink & Pages</Heading>
       <Divider />
-      <HeadingLinks>
-        <StyledAnchorLink href="#library" data-hover="library">
-          Library
-        </StyledAnchorLink>
-        <StyledAnchorLink href="#read" data-hover="read">
-          Read
-        </StyledAnchorLink>
-        <StyledAnchorLink href="#reading" data-hover="reading">
-          Reading
-        </StyledAnchorLink>
-        <StyledAnchorLink href="#unread" data-hover="unread">
-          Unread
-        </StyledAnchorLink>
-      </HeadingLinks>
+      <HeadingLinks>Library</HeadingLinks>
     </HeaderWrapper>
   )
 }
