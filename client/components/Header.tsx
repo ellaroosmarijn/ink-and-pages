@@ -8,7 +8,7 @@ export default function Header() {
       </div>
       <div className="border-brown-700 border-t"></div>
       <div className="bg-white hover:text-brown-700 flex flex-row justify-center gap-x-20 py-3 font-body text-xs uppercase tracking-widest-0.1 sm:font-semibold md:font-normal">
-        <Link to="/library">Library</Link>
+        <Link to="/">Library</Link>
         <Link to="/wishlist">Wishlist</Link>
       </div>
     </div>
