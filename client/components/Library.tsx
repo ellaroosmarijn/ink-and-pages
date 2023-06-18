@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import styled from '@emotion/styled'
 import { useAppDispatch, useAppSelector } from '../hooks/hooks'
 
 import {
@@ -10,46 +9,6 @@ import {
 } from '../actions/books'
 import { Book } from '../../shared/types'
 import BookDataInput from './BookDataInput'
-
-const SubHeading = styled.div`
-  padding-top: 1.5rem;
-  font-weight: 700;
-  font-size: 1.5rem;
-`
-
-const ButtonWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-
-  & a:before {
-    text-align: center;
-    display: block;
-  }
-
-  & a {
-    display: inline-block;
-  }
-`
-
-const SecondaryButton = styled.button`
-  display: flex;
-  background-color: transparent;
-  color: #000000;
-  font-family: 'Wix Madefor Display', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 600;
-  cursor: pointer;
-  border: 3px;
-  border-color: #000000;
-  padding: 1rem 1.5rem;
-  transition: 0.3s;
-
-  &:hover {
-    background-color: #ecddbb;
-    color: #000000;
-  }
-`
 
 export default function Library() {
   const dispatch = useAppDispatch()
@@ -86,35 +45,48 @@ export default function Library() {
 
   return (
     <>
-      <SubHeading>My Library</SubHeading>
+      <div className="pt-6 text-center font-body text-2xl font-bold uppercase tracking-widest-0.1">
+        My Library
+      </div>
       <ol>
         {books?.map((book) => {
           return (
-            <li key={book.id}>
-              {book.title} by {book.author}. It is {book.genre}.
-              <ButtonWrapper>
-                <SecondaryButton
-                  type="button"
-                  onClick={() => remove(`${book.id}`)}
-                >
-                  Remove
-                </SecondaryButton>
-                <SecondaryButton
-                  type="button"
-                  onClick={() => {
-                    setUpdateBook(book)
-                  }}
-                >
-                  Update
-                </SecondaryButton>
-              </ButtonWrapper>
-            </li>
+            <div
+              className="inset-0 flex justify-center py-6 text-center tracking-widest-0.1"
+              key={book.id}
+            >
+              <li>
+                {book.title}
+                <br />
+                By {book.author}
+                <div className="flex flex-row justify-center before:absolute before:block before:text-center sm:gap-8 md:gap-10">
+                  <button
+                    className="text-black hover:text-black my-4 flex cursor-pointer border px-4 py-2 font-body text-sm font-semibold transition duration-300 hover:bg-red-200"
+                    type="button"
+                    onClick={() => remove(`${book.id}`)}
+                  >
+                    Remove
+                  </button>
+                  <button
+                    className="bg-transparent text-black hover:text-black my-4 flex cursor-pointer border px-4 py-2 font-body text-sm font-semibold transition duration-300 hover:bg-blue-200"
+                    type="button"
+                    onClick={() => {
+                      setUpdateBook(book)
+                    }}
+                  >
+                    Update
+                  </button>
+                </div>
+              </li>
+            </div>
           )
         })}
       </ol>
       {addBook ? (
         <>
-          <SubHeading>📚 Add A Book 📚</SubHeading>
+          <div className="pt-6 font-body text-xl font-bold uppercase">
+            📚 Add A Book 📚
+          </div>
           <BookDataInput onSubmit={handleAdd} submitButtonText="Add" />
         </>
       ) : (
@@ -129,7 +101,9 @@ export default function Library() {
 
       {updateBook && (
         <>
-          <SubHeading>📚 Update Book 📚</SubHeading>
+          <div className="pt-6 font-body text-xl font-bold uppercase">
+            📚 Update Book 📚
+          </div>
           <BookDataInput
             onSubmit={handleUpdate}
             submitButtonText="Update"
