@@ -1,14 +1,10 @@
 import { useState, useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../hooks/hooks'
 
-import {
-  getBooks,
-  addingBook,
-  deletingBook,
-  updatingBook,
-} from '../actions/books'
+import { getBooks, deletingBook, updatingBook } from '../actions/books'
 import { Book } from '../../shared/types'
 import BookDataInput from './BookDataInput'
+import AddBook from './AddBook'
 
 export default function Library() {
   const dispatch = useAppDispatch()
@@ -38,14 +34,9 @@ export default function Library() {
     dispatch(getBooks())
   }, [dispatch])
 
-  function handleAdd(book: Book) {
-    dispatch(addingBook(book))
-    setAddBook(false)
-  }
-
   return (
     <>
-      <div className="pt-6 text-center font-body text-2xl font-bold uppercase tracking-widest-0.1">
+      <div className="pt-16 text-center font-body text-2xl font-bold uppercase tracking-widest-0.1">
         My Library
       </div>
       <ol>
@@ -60,6 +51,7 @@ export default function Library() {
                 <br />
                 By {book.author}
                 <div className="flex flex-row justify-center before:absolute before:block before:text-center sm:gap-8 md:gap-10">
+                  {/* // TODO: Add media queries to effectively handle spacing between below buttons for smaller devices */}
                   <button
                     className="text-black hover:text-black my-4 flex cursor-pointer border px-4 py-2 font-body text-sm font-semibold transition duration-300 hover:bg-red-200"
                     type="button"
@@ -84,10 +76,7 @@ export default function Library() {
       </ol>
       {addBook ? (
         <>
-          <div className="pt-6 font-body text-xl font-bold uppercase">
-            📚 Add A Book 📚
-          </div>
-          <BookDataInput onSubmit={handleAdd} submitButtonText="Add" />
+          <AddBook />
         </>
       ) : (
         <button
