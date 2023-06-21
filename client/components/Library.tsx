@@ -4,13 +4,11 @@ import { useAppDispatch, useAppSelector } from '../hooks/hooks'
 import { getBooks, deletingBook, updatingBook } from '../actions/books'
 import { Book } from '../../shared/types'
 import BookDataInput from './BookDataInput'
-import AddBook from './AddBook'
 
 export default function Library() {
   const dispatch = useAppDispatch()
   const books = useAppSelector((state) => state.books)
 
-  const [addBook, setAddBook] = useState(false)
   const [updateBook, setUpdateBook] = useState<Book | undefined>()
 
   function handleUpdate(book: Book) {
@@ -74,19 +72,6 @@ export default function Library() {
           )
         })}
       </ol>
-      {addBook ? (
-        <>
-          <AddBook />
-        </>
-      ) : (
-        <button
-          onClick={() => {
-            setAddBook(true)
-          }}
-        >
-          Add Book
-        </button>
-      )}
 
       {updateBook && (
         <>
