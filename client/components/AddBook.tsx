@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { useAppDispatch } from '../hooks/hooks'
 
 import { addingBook } from '../actions/books'
@@ -8,12 +7,8 @@ import BookDataInput from './BookDataInput'
 export default function AddBook() {
   const dispatch = useAppDispatch()
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [_addBook, setAddBook] = useState(false)
-
   function handleAdd(book: Book) {
     dispatch(addingBook(book))
-    setAddBook(false)
   }
 
   return (
@@ -22,6 +17,7 @@ export default function AddBook() {
         📚 Add A Book 📚
       </div>
       <BookDataInput onSubmit={handleAdd} submitButtonText="Add" />
+      {/* // TODO add success state - pop up or somehing so user knows it has been added - or redirect them to the Library page (this could be annoyig if they are trying to add multiple books so maybe just a 'back' button). */}
     </>
   )
 }

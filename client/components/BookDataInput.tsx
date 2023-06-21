@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 
 import { Book } from '../../shared/types'
 
@@ -13,21 +13,29 @@ export default function BookDataInput({
   submitButtonText,
   defaults,
 }: BookDataInputProps) {
-  const [title, setTitle] = useState(defaults?.title || '')
-  const [author, setAuthor] = useState(defaults?.author || '')
-  const [genre, setGenre] = useState(defaults?.genre || '')
+  const [title, setTitle] = useState('')
+  const [author, setAuthor] = useState('')
+  const [genre, setGenre] = useState('')
 
-  useEffect(() => {
+  const resetToInitial = useCallback(() => {
     setTitle(defaults?.title || '')
     setAuthor(defaults?.author || '')
     setGenre(defaults?.genre || '')
   }, [defaults])
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    const bookData = { title, author, genre } as Book
-    onSubmit(bookData)
-  }
+  useEffect(() => {
+    resetToInitial()
+  }, [resetToInitial])
+
+  const handleSubmit = useCallback(
+    (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault()
+      const bookData = { title, author, genre } as Book
+      onSubmit(bookData)
+      resetToInitial()
+    },
+    [author, genre, onSubmit, resetToInitial, title]
+  )
 
   return (
     <>
@@ -51,7 +59,7 @@ export default function BookDataInput({
         />
         <br />
         <label htmlFor="genre">Genre:</label>
-        <input
+        <input // make setGenre a dropdown box so users options are restricted to fiction and non-fiction - maybe later allow more specific genres (sci-fi, fiction, romance, history, psychology, etc.)
           type="text"
           id="genre"
           name="genre"
