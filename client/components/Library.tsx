@@ -34,7 +34,7 @@ export default function Library() {
 
   return (
     <>
-      <div className="pt-16 text-center font-body text-2xl font-bold uppercase tracking-widest-0.1">
+      <div className="pt-6 text-center font-body text-2xl font-bold uppercase tracking-widest-0.1">
         My Library
       </div>
       <ol>
