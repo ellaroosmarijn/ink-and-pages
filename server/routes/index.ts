@@ -4,6 +4,10 @@ import { getAllBooks, newBook, deleteBook, updateBook } from '../db'
 
 const router = Router()
 
+// TODO: In future will need to make backend request the getAllBooks function again
+// for filtering (so filtered in correct order) - particularly for add and
+// update as may affect list order.
+
 router.get('/books', async (req, res) => {
   try {
     const books = await getAllBooks()
