@@ -37,6 +37,10 @@ export default function BookDataInput({
     [author, genre, onSubmit, resetToInitial, title]
   )
 
+  const handleGenreChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setGenre(e.target.value)
+  }
+
   return (
     <>
       <form onSubmit={handleSubmit} aria-label="BookData">
@@ -58,14 +62,19 @@ export default function BookDataInput({
           onChange={(e) => setAuthor(e.target.value)}
         />
         <br />
-        <label htmlFor="genre">Genre:</label>
-        <input // make setGenre a dropdown box so users options are restricted to fiction and non-fiction - maybe later allow more specific genres (sci-fi, fiction, romance, history, psychology, etc.)
-          type="text"
-          id="genre"
-          name="genre"
+        <label htmlFor="selectGenre" className="mb-2 block">
+          Select Genre:
+        </label>
+        <select
+          id="selectGenre"
+          className="border-gray-300 rounded-lg border p-2"
           value={genre}
-          onChange={(e) => setGenre(e.target.value)}
-        />
+          onChange={handleGenreChange}
+        >
+          <option value="fiction">fiction</option>
+          <option value="non-fiction">non-fiction</option>
+        </select>
+
         <button type="submit">{submitButtonText || 'Submit'}</button>
       </form>
     </>
