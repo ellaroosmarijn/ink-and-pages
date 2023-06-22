@@ -4,11 +4,14 @@ const colors = require('tailwindcss/colors')
 
 module.exports = {
   content: ['./client/**/*.{js,jsx,ts,tsx}'],
-  theme: {  
+  theme: {
     colors: {
       brown: colors.brown,
       blue: colors.blue,
       red: colors.red,
+      gray: colors.gray,
+      white: colors.white,
+      black: colors.black,
     },
     fontFamily: {
       title: ['Noto Serif JP', 'serif'],
