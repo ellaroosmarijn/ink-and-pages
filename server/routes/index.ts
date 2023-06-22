@@ -21,7 +21,7 @@ router.post('/book/add', async (req, res) => {
   try {
     const book = req.body
     await newBook(book)
-    res.json(book) // TODO: send new book back to client
+    res.end()
   } catch (error) {
     res.sendStatus(500).json({ error: 'Please try again' })
   }
@@ -41,8 +41,8 @@ router.patch('/book/:id', async (req, res) => {
   try {
     const id = Number(req.params.id)
     const book = req.body
-    const updatedBook = await updateBook(id, book)
-    res.json(updatedBook)
+    await updateBook(id, book)
+    res.end()
   } catch (error) {
     res.sendStatus(500).json({ error: 'Please try again' })
   }

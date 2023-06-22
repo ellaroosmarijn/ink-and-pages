@@ -99,6 +99,7 @@ export function updatingBook(id: number, book: Book): ThunkAction {
     return updateBook(id, book)
       .then((updatedBook) => {
         dispatch(updateBookSuccess(updatedBook))
+        dispatch(getBooks())
       })
       .catch((error: Error) => {
         dispatch(booksRequestRejected(error.message))
