@@ -77,7 +77,7 @@ export default function BookDataInput({
           <div
             id="toggleGenre"
             className={`${
-              genre === 'fiction' ? 'bg-blue-300' : 'bg-gray-200'
+              genre === 'fiction' ? 'bg-blue-500' : 'bg-gray-300'
             } relative h-6 w-12 cursor-pointer rounded-full transition-colors duration-300`}
             onClick={handleGenreToggle}
             role="switch"
@@ -86,8 +86,8 @@ export default function BookDataInput({
           >
             <div
               className={`${
-                genre === 'fiction' ? 'translate-x-4' : 'translate-x-0'
-              } absolute right-1/2 top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 transform rounded-full bg-white shadow-md transition-transform duration-300`}
+                genre === 'fiction' ? 'translate-x-6' : 'translate-x-0'
+              } absolute top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 transform rounded-full bg-white shadow-md transition-transform duration-300`}
             />
           </div>
         </div>
@@ -101,11 +101,58 @@ export default function BookDataInput({
           value={genre}
           onChange={handleGenreChange}
         >
-          <option value="historical fiction">historical fiction</option>
-          <option value="biography">biography</option>
-          <option value="auto-biograpy">auto-biograpy</option>
-          <option value="history">history</option>
-          <option value="mystery">mystery</option>
+          {genre === 'fiction' ? (
+            <>
+              {' '}
+              <option value="fantasy">Fantasy</option>
+              <option value="classic">Classic</option>
+              <option value="science fiction">Science Fiction</option>
+              <option value="dystopian">Dystopian</option>
+              <option value="action & adventure">Action & Adventure</option>
+              <option value="mystery">Mystery</option>
+              <option value="horror">Horror</option>
+              <option value="thriller & suspense">Thriller & Suspense</option>
+              <option value="historical fiction">Historical Fiction</option>
+              <option value="romance">Romance</option>
+              <option value="women's fiction">Women&apos;s Fiction</option>
+              <option value="literary fiction">Literary Fiction</option>
+              <option value="contemporary fiction">Contemporary Fiction</option>
+              <option value="magical realism">Magical Realism</option>
+              <option value="graphic novel">Graphic Novel</option>
+              <option value="comic book">Comic Book</option>
+              <option value="short story">Short Story</option>
+              <option value="young adult">Young Adult</option>
+              <option value="new adult">New Adult</option>
+              <option value="children's">Children&apos;s</option>
+            </>
+          ) : (
+            <>
+              <option value="memoir & autobiography">
+                Memoir & Autobiography
+              </option>
+              <option value="Biography">Biography</option>
+              <option value="classic">Classic</option>
+              <option value="food & drink">Food & Drink</option>
+              <option value="art & photography">Art & Photography</option>
+              <option value="comic book">Comic Book</option>
+              <option value="self-help">Self-help</option>
+              <option value="history">History</option>
+              <option value="travel">Travel</option>
+              <option value="true crime">True Crime</option>
+              <option value="humor">Humor</option>
+              <option value="Essays">Essays</option>
+              <option value="guide / how-to ">Guide / How-to </option>
+              <option value="religion & spirituality">
+                Religion & Spirituality
+              </option>
+              <option value="humanities & social sciences">
+                Humanities & Social Sciences
+              </option>
+              <option value="Parenting & Families">Parenting & Families</option>
+              <option value="science & technology">Science & Technology</option>
+              <option value="children's">Children&apos;s</option>
+            </>
+          )}
         </select>
 
         <button type="submit">{submitButtonText || 'Submit'}</button>
