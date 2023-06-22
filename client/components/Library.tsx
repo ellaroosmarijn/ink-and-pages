@@ -51,14 +51,14 @@ export default function Library() {
                 <div className="flex flex-row justify-center before:absolute before:block before:text-center sm:gap-8 md:gap-10">
                   {/* // TODO: Add media queries to effectively handle spacing between below buttons for smaller devices */}
                   <button
-                    className="text-black hover:text-black my-4 flex cursor-pointer border px-4 py-2 font-body text-sm font-semibold transition duration-300 hover:bg-red-200"
+                    className="my-4 flex cursor-pointer border px-4 py-2 font-body text-sm font-semibold text-black transition duration-300 hover:bg-red-200 hover:text-black"
                     type="button"
                     onClick={() => remove(`${book.id}`)}
                   >
                     Remove
                   </button>
                   <button
-                    className="bg-transparent text-black hover:text-black my-4 flex cursor-pointer border px-4 py-2 font-body text-sm font-semibold transition duration-300 hover:bg-blue-200"
+                    className="bg-transparent my-4 flex cursor-pointer border px-4 py-2 font-body text-sm font-semibold text-black transition duration-300 hover:bg-blue-200 hover:text-black"
                     type="button"
                     onClick={() => {
                       setUpdateBook(book)
